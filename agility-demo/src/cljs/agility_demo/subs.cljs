@@ -1,8 +1,51 @@
 (ns agility-demo.subs
   (:require
-   [re-frame.core :as re-frame]))
+    [re-frame.core :as re-frame]
+    [agility-demo.utils :as utils]))
 
 (re-frame/reg-sub
- ::name
- (fn [db]
-   (:name db)))
+  ::this
+  (fn [db]
+    (:this db)))
+
+(re-frame/reg-sub
+  ::all
+  (fn [db]
+    (:all db)))
+
+(re-frame/reg-sub
+  ::tmp
+  (fn [db]
+    (:tmp db)))
+
+(re-frame/reg-sub
+  ::active-handler
+  (fn [db _]
+    (get-in db [:active :id])))
+
+(re-frame/reg-sub
+  ::active-handler-details
+  (fn [db _]
+    (utils/retrieve-user-details db)))
+
+(re-frame/reg-sub
+  ::active-panel
+  (fn [db _]
+    (get-in db [:active :panel])))
+
+(re-frame/reg-sub
+  ::active-class
+  (fn [db _]
+    (get-in db [:active :class])))
+
+(re-frame/reg-sub
+  ::active-class-details
+  (fn [db _]
+    (utils/retrieve-class-details db)))
+
+(re-frame/reg-sub
+  ::active-class-string
+  (fn [db _]
+    (-> db
+        (utils/retrieve-class-details)
+        (utils/class->header-string))))

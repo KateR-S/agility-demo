@@ -1,0 +1,16 @@
+[
+  {
+    "Class": 1,
+    "Type": "Steeplechase",
+    "Grades": "1-7",
+    "Size": "Med",
+    "Entries": [1, 2, 3]
+  },
+  {
+    "Class": 2,
+    "Type": "Steeplechase",
+    "Grades": "4-7",
+    "Size": "Med",
+    "Entries": [1, 3]
+  }
+]
