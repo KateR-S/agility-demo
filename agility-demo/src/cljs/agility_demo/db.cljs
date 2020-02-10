@@ -12,4 +12,5 @@
    :active {:panel :start
             :class 1
             :id 0
-            :handler-details "xyz"}})
+            :handler-details "xyz"
+            :nav :exit}})

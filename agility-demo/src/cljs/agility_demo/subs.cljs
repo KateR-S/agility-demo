@@ -34,6 +34,11 @@
     (get-in db [:active :panel])))
 
 (re-frame/reg-sub
+  ::active-nav
+  (fn [db _]
+    (get-in db [:active :nav])))
+
+(re-frame/reg-sub
   ::active-class
   (fn [db _]
     (get-in db [:active :class])))
@@ -49,3 +54,9 @@
     (-> db
         (utils/retrieve-class-details)
         (utils/class->header-string))))
+
+(re-frame/reg-sub
+  ::active-progress-string
+  (fn [db _]
+    "Med: 11-44 (R16,W15,L1)"
+    ))
